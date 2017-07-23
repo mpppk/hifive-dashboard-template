@@ -1,23 +1,22 @@
-import chartController from './ChartController';
+import {chartController} from './ChartController';
+import {deviceCardController, IDeviceCardSetting} from './DeviceCardController';
 import {IMapSetting, mapController} from './MapController';
 
 export interface IRootControllerParams {
-    allProbsChartElementId: string;
-    highestProbChartElementId: string;
+    deviceCardSetting: IDeviceCardSetting;
     mapSetting: IMapSetting;
 }
 
 export const rootController = {
     __name: 'rootController',
-    _chartController: chartController,
+    _deviceCardController: deviceCardController,
     _mapController: mapController,
 
     __ready(context) {
         this._mapController.initializeMap(context.args.mapSetting);
-        this._chartController.initializeHighestProbChart(context.args.highestProbChartElementId);
-        this._chartController.initializeAllProbsChart(context.args.allProbsChartElementId);
+        this._deviceCardController.initialize(context.args.deviceCardSetting);
         setTimeout(() => {
-            this._chartController.updateHighestProbChart(50);
+            this._deviceCardController.updateHighestProbChart(50);
         }, 2000);
     },
 };

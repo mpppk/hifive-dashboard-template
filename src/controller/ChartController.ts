@@ -1,10 +1,15 @@
 import {Chart, ChartConfiguration, ChartData, ChartDataSets} from 'chart.js';
 
-const chartController = {
+export interface IChartControllerSetting {
+    allProbsChartElementId: string;
+    highestProbChartElementId: string;
+}
+
+export const chartController = {
     __name: 'chartController',
 
-    initializeHighestProbChart(highestProbChartElementId: string) {
-        const highestProbChartCanvas = document.getElementById('highest-prob-chart') as HTMLCanvasElement;
+    initializeHighestProbChart(setting: IChartControllerSetting) {
+        const highestProbChartCanvas = document.getElementById(setting.highestProbChartElementId) as HTMLCanvasElement;
         const highestProbChartCanvasCtx = highestProbChartCanvas.getContext('2d');
 
         const chartDataSet: ChartDataSets = {
@@ -42,8 +47,8 @@ const chartController = {
         this.highestProbChart.update();
     },
 
-    initializeAllProbsChart(allProbsChartElementId: string) {
-        const allProbsChartCanvas = document.getElementById(allProbsChartElementId) as HTMLCanvasElement;
+    initializeAllProbsChart(setting: IChartControllerSetting) {
+        const allProbsChartCanvas = document.getElementById(setting.allProbsChartElementId) as HTMLCanvasElement;
         const ctx = allProbsChartCanvas.getContext('2d');
 
         const dataset = {
@@ -78,5 +83,3 @@ const chartController = {
         });
     },
 };
-
-export default chartController;

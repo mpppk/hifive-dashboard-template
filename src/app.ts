@@ -2,6 +2,8 @@ import {IMapSetting} from './controller/MapController';
 
 declare const h5: any;
 
+import {IChartControllerSetting} from './controller/ChartController';
+import {IDeviceCardSetting} from './controller/DeviceCardController';
 import {IRootControllerParams, rootController} from './controller/rootController';
 
 const mapSetting: IMapSetting = {
@@ -12,9 +14,19 @@ const mapSetting: IMapSetting = {
     zoom: 13,
 };
 
-const rootControllerParams: IRootControllerParams = {
+const chartControllerSetting: IChartControllerSetting = {
     allProbsChartElementId: 'all-probs-chart',
     highestProbChartElementId: 'highest-prob-chart',
+};
+
+const deviceCardSetting: IDeviceCardSetting = {
+    chartControllerSetting,
+    currentDeviceImageElementId: 'current-device-image',
+    nearestPointImageElementId: 'nearest-point-image',
+};
+
+const rootControllerParams: IRootControllerParams = {
+    deviceCardSetting,
     mapSetting,
 };
 
