@@ -1,0 +1,8 @@
+.idea/
+*.map
+node_modules/
+dist/
+src/**/*.js
+test/**/*.js
+.nyc_output/
+docs/

@@ -1,0 +1,51 @@
+{
+  "name": "hifive-dashboard-template",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "test": "nyc mocha",
+    "doc": "typedoc --out ./docs",
+    "start": "webpack-dev-server",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' 'test/**/*.ts'"
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "exclude": [
+      "**/*.d.ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "keywords": [],
+  "author": "mpppk",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/mocha": "^2.2.41",
+    "@types/power-assert": "^1.4.29",
+    "chai": "^4.1.0",
+    "espower-typescript": "^8.0.2",
+    "isparta": "^4.0.0",
+    "mocha": "^3.4.2",
+    "nyc": "^11.0.3",
+    "power-assert": "^1.4.4",
+    "source-map-support": "^0.4.15",
+    "ts-loader": "^2.3.0",
+    "ts-node": "^3.2.0",
+    "tslint": "^5.5.0",
+    "typedoc": "^0.7.1",
+    "typescript": "^2.4.2",
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.5.1"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  }
+}
