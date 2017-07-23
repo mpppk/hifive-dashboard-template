@@ -4,21 +4,12 @@
     <title>TypeScript+hifive</title>
 </head>
 <body>
-
-
     <!-- Simple header with scrollable tabs. -->
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" id="h5container">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
-                <!-- Title -->
                 <span class="mdl-layout-title">Dashboard</span>
             </div>
-            <!-- Tabs -->
-            <!--<div class="mdl-layout__tab-bar mdl-js-ripple-effect">-->
-                <!--<a href="#scroll-tab-1" class="mdl-layout__tab is-active">User 1</a>-->
-                <!--<a href="#scroll-tab-2" class="mdl-layout__tab">User 2</a>-->
-                <!--<a href="#scroll-tab-3" class="mdl-layout__tab">User 3</a>-->
-            <!--</div>-->
         </header>
         <div class="mdl-layout__drawer">
             <span class="mdl-layout-title">Menu</span>
@@ -29,9 +20,8 @@
                     <div class="mdl-cell mdl-cell--4-col">
                         <div class="mdl-card mdl-shadow--2dp through mdl-shadow--2dp location-card">
                             <div class="mdl-card__title">
-                                <h6 class="mdl-card__title-text">山田太郎</h6>
+                                <h6 class="mdl-card__title-text">Device</h6>
                             </div>
-                            <!--<div class="mdl-card__actions"></div>-->
                             <div class="mdl-grid mdl-grid-nesting user-card-grid">
                                 <div class="mdl-cell mdl-cell--6-col">
                                     <div class="user-card-left-grid-parent">
@@ -43,54 +33,35 @@
                                 <div class="mdl-cell mdl-cell--6-col">
                                     <img src="dog.png">
                                 </div>
+                                <div class="mdl-cell mdl-cell--6-col">
+                                    <canvas id="highest-prob-chart" width="100%" height="100%"></canvas>
+                                </div>
+                                <div class="mdl-cell mdl-cell--6-col">
+                                    <div class="user-card-left-grid-parent">
+                                        <div class="user-card-left-grid">
+                                            <img src="dog.png">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="mdl-cell mdl-cell--12-col all-probs-chart-grid">
+                                    <canvas id="all-probs-chart" width="100%" height="100%"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="mdl-cell mdl-cell--8-col">
                         <div class="mdl-card mdl-shadow--2dp through mdl-shadow--2dp location-card">
                             <div class="mdl-card__title">
-                                <h6 class="mdl-card__title-text">Point 1</h6>
+                                <h6 class="mdl-card__title-text">Location</h6>
                             </div>
-                            <!--<div class="mdl-card__actions"></div>-->
                             <div id="mapid"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--<section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">-->
-                <!--<div class="page-content">-->
-                    <!--<div class="mdl-grid">-->
-                        <!--<div class="mdl-cell mdl-cell&#45;&#45;4-col">-->
-                            <!--<div class="mdl-card mdl-shadow&#45;&#45;2dp through mdl-shadow&#45;&#45;2dp">-->
-                                <!--<div class="mdl-card__title">-->
-                                    <!--<h2 class="mdl-card__title-text">Map</h2>-->
-                                <!--</div>-->
-                                <!--<div class="mdl-card__supporting-text">-->
-                                    <!--supporting text-->
-                                <!--</div>-->
-                                <!--<div class="mdl-card__actions">-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="mdl-cell mdl-cell&#45;&#45;4-col">-->
-                            <!--&lt;!&ndash;<div id="mapid"></div>&ndash;&gt;-->
-                        <!--</div>-->
-                        <!--<div class="mdl-cell mdl-cell&#45;&#45;4-col">4</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</section>-->
-            <!--<section class="mdl-layout__tab-panel" id="scroll-tab-2">-->
-                <!--<div class="page-content">&lt;!&ndash; Your content goes here &ndash;&gt;fuga</div>-->
-            <!--</section>-->
-            <!--<section class="mdl-layout__tab-panel" id="scroll-tab-3">-->
-                <!--<div class="page-content">&lt;!&ndash; Your content goes here &ndash;&gt;</div>-->
-            <!--</section>-->
         </main>
     </div>
-    <!--<div id="container">-->
-        <!--<input type="button" id="countUpBtn" class="btn btn-primary" value="Count Up" />-->
-        <!--<input type="button" id="resetBtn" class="btn btn-warning" value="Reset" />-->
-    <!--</div>-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>

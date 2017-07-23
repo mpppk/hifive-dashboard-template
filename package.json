@@ -27,6 +27,7 @@
   "author": "mpppk",
   "license": "MIT",
   "devDependencies": {
+    "@types/chartjs": "0.0.30",
     "@types/leaflet": "^1.0.67",
     "@types/mocha": "^2.2.41",
     "@types/power-assert": "^1.4.29",
