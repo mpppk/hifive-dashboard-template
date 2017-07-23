@@ -1,10 +1,17 @@
 import chartController from './ChartController';
-import mapController from './MapController';
+import {IMapSetting, mapController} from './MapController';
 
-const rootController = {
+export interface IRootControllerParams {
+    highestProbChartElementId: string;
+    mapSetting: IMapSetting;
+}
+
+export const rootController = {
     __name: 'rootController',
     _chartController: chartController,
     _mapController: mapController,
-};
 
-export default rootController;
+    __ready(context) {
+        this._mapController.initializeMap(context.args.mapSetting);
+    },
+};

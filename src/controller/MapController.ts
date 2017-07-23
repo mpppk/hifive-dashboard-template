@@ -1,14 +1,18 @@
 import * as L from 'leaflet';
 
-const mapController = {
+export interface IMapSetting {
+    mapElementId: string;
+    latLngExpression: L.LatLngExpression;
+    zoom: number;
+    tileUrl: string;
+    tileLayerOptions: L.TileLayerOptions;
+}
+
+export const mapController = {
     __name: 'mapController',
 
-    __ready(context) {
-        const mymap = L.map('mapid').setView([51.505, -0.09], 13);
-        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 18,
-        }).addTo(mymap);
+    initializeMap(mapSetting: IMapSetting) {
+        this.mymap = L.map(mapSetting.mapElementId).setView(mapSetting.latLngExpression, mapSetting.zoom);
+        L.tileLayer(mapSetting.tileUrl, mapSetting.tileLayerOptions).addTo(this.mymap);
     },
 };
-
-export default mapController;
