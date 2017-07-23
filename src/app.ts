@@ -13,6 +13,7 @@ const mapSetting: IMapSetting = {
 };
 
 const rootControllerParams: IRootControllerParams = {
+    allProbsChartElementId: 'all-probs-chart',
     highestProbChartElementId: 'highest-prob-chart',
     mapSetting,
 };
