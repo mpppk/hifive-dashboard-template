@@ -9,6 +9,7 @@ import {IRootControllerParams, rootController} from './controller/rootController
 const mapSetting: IMapSetting = {
     latLngExpression: [51.505, -0.09],
     mapElementId: 'mapid',
+    markerPosition: [51.5, -0.09],
     tileLayerOptions: {maxZoom: 18},
     tileUrl: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     zoom: 13,

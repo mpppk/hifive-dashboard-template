@@ -19,6 +19,7 @@ export const rootController = {
             this._deviceCardController.updateHighestProbChart(50);
             this._deviceCardController.updateCurrentImage('dog.png');
             this._deviceCardController.updateNearestPointImage('dog.png');
+            this._mapController.updatePosition([51.5, -0.1]);
         }, 2000);
     },
 };
