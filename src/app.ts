@@ -7,7 +7,7 @@ import {IDeviceCardSetting} from './controller/DeviceCardController';
 import {IRootControllerParams, rootController} from './controller/rootController';
 
 const mapSetting: IMapSetting = {
-    latLngExpression: [51.505, -0.09],
+    position: [51.505, -0.09],
     mapElementId: 'mapid',
     markerPosition: [51.5, -0.09],
     tileLayerOptions: {maxZoom: 18},
