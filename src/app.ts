@@ -1,4 +1,4 @@
-import {IMapSetting} from './controller/MapController';
+import {IMapSetting, MapMarkerIconType} from './controller/MapController';
 
 declare const h5: any;
 
@@ -7,9 +7,10 @@ import {IDeviceCardSetting} from './controller/DeviceCardController';
 import {IRootControllerParams, rootController} from './controller/rootController';
 
 const mapSetting: IMapSetting = {
-    position: [51.505, -0.09],
+    iconType: MapMarkerIconType.White,
     mapElementId: 'mapid',
     markerPosition: [51.5, -0.09],
+    position: [51.505, -0.09],
     tileLayerOptions: {maxZoom: 18},
     tileUrl: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     zoom: 13,

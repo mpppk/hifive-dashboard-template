@@ -1,7 +1,7 @@
 import {polyfill} from 'es6-promise';
 polyfill();
 import {deviceCardController, IDeviceCardSetting} from './DeviceCardController';
-import {IMapSetting, mapController} from './MapController';
+import {IMapSetting, mapController, MapMarkerIconType} from './MapController';
 
 export interface IRootControllerParams {
     deviceCardSetting: IDeviceCardSetting;
@@ -21,6 +21,7 @@ export const rootController = {
             this._deviceCardController.updateCurrentImage('dog.png');
             this._deviceCardController.updateNearestPointImage('dog.png');
             this._mapController.updatePosition([51.5, -0.1]);
+            this._mapController.updateMarkerIcon(MapMarkerIconType.Black);
         }, 2000);
         this.polling();
     },
