@@ -2,9 +2,10 @@ import {IMapSetting, MapMarkerIconType} from './controller/MapController';
 
 declare const h5: any;
 
-import {IChartControllerSetting} from './controller/ChartController';
 import {IDeviceCardSetting} from './controller/DeviceCardController';
+import {IDoughnutChartControllerSetting} from './controller/DoughnutChartController';
 import {IRootControllerParams, rootController} from './controller/rootController';
+import {IBarChartControllerSetting} from './controller/BarChartController';
 
 const mapSetting: IMapSetting = {
     iconType: MapMarkerIconType.White,
@@ -16,18 +17,22 @@ const mapSetting: IMapSetting = {
     zoom: 13,
 };
 
-const chartControllerSetting: IChartControllerSetting = {
-    allProbsChartElementId: 'all-probs-chart',
-    highestProbChartElementId: 'highest-prob-chart',
+const barChartSetting: IBarChartControllerSetting = {
+    barChartElementId: 'bar-chart',
+};
+
+const doughnutChartControllerSetting: IDoughnutChartControllerSetting = {
+    doughnutChartElementId: 'doughnut-chart',
 };
 
 const deviceCardSetting: IDeviceCardSetting = {
-    chartControllerSetting,
     currentDeviceImageElementId: 'current-device-image',
+    doughnutChartControllerSetting,
     nearestPointImageElementId: 'nearest-point-image',
 };
 
 const rootControllerParams: IRootControllerParams = {
+    barChartSetting,
     deviceCardSetting,
     mapSetting,
 };

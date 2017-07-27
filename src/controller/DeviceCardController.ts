@@ -1,23 +1,22 @@
-import {chartController, IChartControllerSetting} from './ChartController';
+import {doughnutChartController, IDoughnutChartControllerSetting} from './DoughnutChartController';
 
 export interface IDeviceCardSetting {
-    chartControllerSetting: IChartControllerSetting;
+    doughnutChartControllerSetting: IDoughnutChartControllerSetting;
     currentDeviceImageElementId: string;
     nearestPointImageElementId: string;
 }
 
 export const deviceCardController = {
     __name: 'deviceCardController',
-    _chartController: chartController,
+    _chartController: doughnutChartController,
 
     initialize(setting: IDeviceCardSetting) {
         this.setting = setting;
-        this._chartController.initializeHighestProbChart(setting.chartControllerSetting);
-        this._chartController.initializeAllProbsChart(setting.chartControllerSetting);
+        this._chartController.initializeDoughnutChart(setting.doughnutChartControllerSetting);
     },
 
-    updateHighestProbChart(prob: number) {
-        this._chartController.updateHighestProbChart(prob);
+    updateDoughnutChart(prob: number) {
+        this._chartController.updateDoughnutChart(prob);
     },
 
     updateCurrentImage(imagePath: string) {
