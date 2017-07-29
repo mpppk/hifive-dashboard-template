@@ -1,28 +1,28 @@
 import {polyfill} from 'es6-promise';
 polyfill();
 import {barChartController, IBarChartControllerSetting} from './BarChartController';
-import {deviceCardController, IDeviceCardSetting} from './DeviceCardController';
+import {ILeftCardSetting, leftCardController} from './LeftCardController';
 import {IMapSetting, mapController, MapMarkerIconType} from './MapController';
 
 export interface IRootControllerParams {
     barChartSetting: IBarChartControllerSetting;
-    deviceCardSetting: IDeviceCardSetting;
+    deviceCardSetting: ILeftCardSetting;
     mapSetting: IMapSetting;
 }
 
 export const rootController = {
     __name: 'rootController',
     _barChartController: barChartController,
-    _deviceCardController: deviceCardController,
+    _leftCardController: leftCardController,
     _mapController: mapController,
 
     __ready(context: any) {
         this._mapController.initializeMap(context.args.mapSetting);
-        this._deviceCardController.initialize(context.args.deviceCardSetting);
+        this._leftCardController.initialize(context.args.deviceCardSetting);
         setTimeout(() => {
-            this._deviceCardController.updateDoughnutChart(50);
-            this._deviceCardController.updateCurrentImage('dog.png');
-            this._deviceCardController.updateNearestPointImage('dog.png');
+            this._leftCardController.updateDoughnutChart(50);
+            this._leftCardController.updateTopImage('dog.png');
+            this._leftCardController.updateBottomPointImage('dog.png');
             this._barChartController.initializeBarChart(context.args.barChartSetting);
             this._mapController.updatePosition([51.5, -0.1]);
             this._mapController.updateMarkerIcon(MapMarkerIconType.Black);

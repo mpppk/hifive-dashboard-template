@@ -2,7 +2,7 @@ import {IMapSetting, MapMarkerIconType} from './controller/MapController';
 
 declare const h5: any;
 
-import {IDeviceCardSetting} from './controller/DeviceCardController';
+import {ILeftCardSetting} from './controller/LeftCardController';
 import {IDoughnutChartControllerSetting} from './controller/DoughnutChartController';
 import {IRootControllerParams, rootController} from './controller/rootController';
 import {IBarChartControllerSetting} from './controller/BarChartController';
@@ -25,10 +25,10 @@ const doughnutChartControllerSetting: IDoughnutChartControllerSetting = {
     doughnutChartElementId: 'doughnut-chart',
 };
 
-const deviceCardSetting: IDeviceCardSetting = {
-    currentDeviceImageElementId: 'current-device-image',
+const deviceCardSetting: ILeftCardSetting = {
+    topImageElementId: 'current-device-image',
     doughnutChartControllerSetting,
-    nearestPointImageElementId: 'nearest-point-image',
+    bottomImageElementId: 'nearest-point-image',
 };
 
 const rootControllerParams: IRootControllerParams = {
