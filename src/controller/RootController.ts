@@ -23,7 +23,7 @@ export const rootController = {
             this._leftCardController.updatePercentChart(50);
             this._leftCardController.updateTopImage('dog.png');
             this._leftCardController.updateBottomPointImage('dog.png');
-            this._barChartController.initializeBarChart(context.args.barChartSetting);
+            this._barChartController.initialize(context.args.barChartSetting);
             this._mapController.updatePosition([51.5, -0.1]);
             this._mapController.updateMarkerIcon(MapMarkerIconType.Black);
         }, 2000);
