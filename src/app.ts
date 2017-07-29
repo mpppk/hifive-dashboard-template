@@ -2,10 +2,10 @@ import {IMapSetting, MapMarkerIconType} from './controller/MapController';
 
 declare const h5: any;
 
-import {ILeftCardSetting} from './controller/LeftCardController';
-import {IDoughnutChartControllerSetting} from './controller/DoughnutChartController';
-import {IRootControllerParams, rootController} from './controller/rootController';
 import {IBarChartControllerSetting} from './controller/BarChartController';
+import {ILeftCardSetting} from './controller/LeftCardController';
+import {IPercentChartControllerSetting} from './controller/PercentChartController';
+import {IRootControllerParams, rootController} from './controller/rootController';
 
 const mapSetting: IMapSetting = {
     iconType: MapMarkerIconType.White,
@@ -21,19 +21,24 @@ const barChartSetting: IBarChartControllerSetting = {
     barChartElementId: 'bar-chart',
 };
 
-const doughnutChartControllerSetting: IDoughnutChartControllerSetting = {
-    doughnutChartElementId: 'doughnut-chart',
+const percentChartControllerSetting: IPercentChartControllerSetting = {
+    percentChartServiceSetting: {
+        percent: 0,
+        percentChartElementId: 'doughnut-chart',
+        primaryColor: 'rgba(75, 192, 192, 1)',
+        secondaryColor: 'rgba(75, 192, 192, 0.2)',
+    },
 };
 
 const deviceCardSetting: ILeftCardSetting = {
-    topImageElementId: 'current-device-image',
-    doughnutChartControllerSetting,
     bottomImageElementId: 'nearest-point-image',
+    percentChartControllerSetting,
+    topImageElementId: 'current-device-image',
 };
 
 const rootControllerParams: IRootControllerParams = {
     barChartSetting,
-    deviceCardSetting,
+    leftCardSetting: deviceCardSetting,
     mapSetting,
 };
 

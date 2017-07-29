@@ -6,7 +6,7 @@ import {IMapSetting, mapController, MapMarkerIconType} from './MapController';
 
 export interface IRootControllerParams {
     barChartSetting: IBarChartControllerSetting;
-    deviceCardSetting: ILeftCardSetting;
+    leftCardSetting: ILeftCardSetting;
     mapSetting: IMapSetting;
 }
 
@@ -18,9 +18,9 @@ export const rootController = {
 
     __ready(context: any) {
         this._mapController.initializeMap(context.args.mapSetting);
-        this._leftCardController.initialize(context.args.deviceCardSetting);
+        this._leftCardController.initialize(context.args.leftCardSetting);
         setTimeout(() => {
-            this._leftCardController.updateDoughnutChart(50);
+            this._leftCardController.updatePercentChart(50);
             this._leftCardController.updateTopImage('dog.png');
             this._leftCardController.updateBottomPointImage('dog.png');
             this._barChartController.initializeBarChart(context.args.barChartSetting);

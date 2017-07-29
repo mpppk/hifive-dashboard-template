@@ -1,32 +1,32 @@
-import {doughnutChartController, IDoughnutChartControllerSetting} from './DoughnutChartController';
 import {IController} from './IController';
+import {IPercentChartControllerSetting, percentChartController} from './PercentChartController';
 
 export interface ILeftCardSetting {
-    doughnutChartControllerSetting: IDoughnutChartControllerSetting;
+    percentChartControllerSetting: IPercentChartControllerSetting;
     topImageElementId: string;
     bottomImageElementId: string;
 }
 
 interface ILeftCardController extends IController {
-    _chartController: any;
+    _percentChartController: any;
     setting: ILeftCardSetting | null;
     initialize(setting: ILeftCardSetting): void;
-    updateDoughnutChart(prob: number): void;
+    updatePercentChart(percent: number): void;
     updateTopImage(imagePath: string): void;
     updateBottomPointImage(imagePath: string): void;
 }
 
 export const leftCardController: ILeftCardController = {
     __name: 'leftCardController',
-    _chartController: doughnutChartController,
+    _percentChartController: percentChartController,
     setting: null,
     initialize(setting: ILeftCardSetting) {
         this.setting = setting;
-        this._chartController.initializeDoughnutChart(setting.doughnutChartControllerSetting);
+        this._percentChartController.initialize(setting.percentChartControllerSetting);
     },
 
-    updateDoughnutChart(prob: number) {
-        this._chartController.updateDoughnutChart(prob);
+    updatePercentChart(percent: number) {
+        this._percentChartController.update(percent);
     },
 
     updateTopImage(imagePath: string) {

@@ -1,24 +1,24 @@
 import {Chart, ChartConfiguration, ChartDataSets} from 'chart.js';
 
-export interface IDoughnutChartServiceSetting {
-    doughnutChartElementId: string;
+export interface IPercentChartServiceSetting {
+    percentChartElementId: string;
     primaryColor: string;
     secondaryColor: string;
     percent: number;
 }
 
-export default class DoughnutChartService {
+export class PercentChartService {
     private static getTitle(percent: number): string {
         return `${percent}%`;
     }
 
     private _chart: Chart;
 
-    constructor(setting: IDoughnutChartServiceSetting) {
-        const doughnutChartCanvas = document.getElementById(setting.doughnutChartElementId) as HTMLCanvasElement;
-        const doughnutChartCanvasCtx: CanvasRenderingContext2D | null = doughnutChartCanvas.getContext('2d');
+    constructor(setting: IPercentChartServiceSetting) {
+        const percentChartCanvas = document.getElementById(setting.percentChartElementId) as HTMLCanvasElement;
+        const percentChartCanvasCtx: CanvasRenderingContext2D | null = percentChartCanvas.getContext('2d');
 
-        if (doughnutChartCanvasCtx === null) {
+        if (percentChartCanvasCtx === null) {
             return;
         }
 
@@ -37,13 +37,13 @@ export default class DoughnutChartService {
             options: {
                 title: {
                     display: true,
-                    text: DoughnutChartService.getTitle(setting.percent),
+                    text: PercentChartService.getTitle(setting.percent),
                 },
             },
             type: 'doughnut',
         };
 
-        this._chart = new Chart(doughnutChartCanvasCtx, chartConfiguration);
+        this._chart = new Chart(percentChartCanvasCtx, chartConfiguration);
     }
 
     get chart(): Chart {
@@ -68,7 +68,7 @@ export default class DoughnutChartService {
         this.chart.data.datasets[0].data![0] = 100 - percent;
         this.chart.data.datasets[0].data![1] = percent;
         // FIXME
-        (this.chart as any).options.title.text = DoughnutChartService.getTitle(percent);
+        (this.chart as any).options.title.text = PercentChartService.getTitle(percent);
         this.chart.update();
     }
 }
