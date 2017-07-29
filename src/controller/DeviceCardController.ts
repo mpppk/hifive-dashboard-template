@@ -21,12 +21,12 @@ export const deviceCardController = {
 
     updateCurrentImage(imagePath: string) {
         const currentDeviceImageElementSelector = '#' + this.setting.currentDeviceImageElementId;
-        const dom = this.$find(currentDeviceImageElementSelector).attr('src', imagePath);
+        this.$find(currentDeviceImageElementSelector).attr('src', imagePath);
     },
 
     updateNearestPointImage(imagePath: string) {
         const nearestPointImageElementSelector = '#' + this.setting.nearestPointImageElementId;
-        const dom = this.$find(nearestPointImageElementSelector).attr('src', imagePath);
+        this.$find(nearestPointImageElementSelector).attr('src', imagePath);
     },
 
 };

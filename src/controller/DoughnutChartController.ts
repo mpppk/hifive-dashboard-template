@@ -1,4 +1,4 @@
-import {Chart, ChartConfiguration, ChartData, ChartDataSets} from 'chart.js';
+import {Chart, ChartConfiguration, ChartDataSets} from 'chart.js';
 
 export interface IDoughnutChartControllerSetting {
     doughnutChartElementId: string;
@@ -9,7 +9,11 @@ export const doughnutChartController = {
 
     initializeDoughnutChart(setting: IDoughnutChartControllerSetting) {
         const doughnutChartCanvas = document.getElementById(setting.doughnutChartElementId) as HTMLCanvasElement;
-        const doughnutChartCanvasCtx = doughnutChartCanvas.getContext('2d');
+        const doughnutChartCanvasCtx: CanvasRenderingContext2D | null = doughnutChartCanvas.getContext('2d');
+
+        if (doughnutChartCanvasCtx === null) {
+            return;
+        }
 
         const chartDataSet: ChartDataSets = {
             backgroundColor: [

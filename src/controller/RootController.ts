@@ -16,7 +16,7 @@ export const rootController = {
     _deviceCardController: deviceCardController,
     _mapController: mapController,
 
-    __ready(context) {
+    __ready(context: any) {
         this._mapController.initializeMap(context.args.mapSetting);
         this._deviceCardController.initialize(context.args.deviceCardSetting);
         setTimeout(() => {
@@ -31,7 +31,7 @@ export const rootController = {
     },
 
     polling() {
-        const sleep = (n) => new Promise((resolve) => setTimeout(resolve, n));
+        const sleep = (n: number) => new Promise((resolve) => setTimeout(resolve, n));
         const wait = async () => {
             while (true) {
                 // your ajax code

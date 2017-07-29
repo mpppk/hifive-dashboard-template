@@ -3,7 +3,7 @@ import Counter from '../service/Counter';
 const countUpController = {
     __name: 'countUpController',
 
-    __ready(context) {
+    __ready(_context: any) {
         this._counter = new Counter();
     },
 

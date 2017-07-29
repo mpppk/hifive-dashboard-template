@@ -1,4 +1,4 @@
-import {Chart, ChartConfiguration, ChartData, ChartDataSets} from 'chart.js';
+import {Chart, ChartDataSets} from 'chart.js';
 
 export interface IBarChartControllerSetting {
     barChartElementId: string;
@@ -10,7 +10,11 @@ export const barChartController = {
         const barChartCanvas = document.getElementById(setting.barChartElementId) as HTMLCanvasElement;
         const ctx = barChartCanvas.getContext('2d');
 
-        const dataset = {
+        if (ctx === null) {
+            return;
+        }
+
+        const dataset: ChartDataSets = {
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
