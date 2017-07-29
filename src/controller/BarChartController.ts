@@ -1,11 +1,18 @@
 import {Chart, ChartDataSets} from 'chart.js';
+import {IController} from './IController';
 
 export interface IBarChartControllerSetting {
     barChartElementId: string;
 }
 
-export const barChartController = {
+interface IBarChartController extends IController {
+    barChart: Chart | null;
+    initializeBarChart(setting: IBarChartControllerSetting): void;
+}
+
+export const barChartController: IBarChartController = {
     __name: 'barChartController',
+    barChart: null,
     initializeBarChart(setting: IBarChartControllerSetting) {
         const barChartCanvas = document.getElementById(setting.barChartElementId) as HTMLCanvasElement;
         const ctx = barChartCanvas.getContext('2d');
