@@ -9,7 +9,7 @@ export interface IPercentChartServiceSetting {
 
 export class PercentChartService {
     private static getTitle(percent: number): string {
-        return `${percent}%`;
+        return `${Math.round(percent * 10) / 10}%`;
     }
 
     private _chart: Chart;

@@ -54,7 +54,7 @@ export class BarChartService {
             this.chart.data.datasets.length < 1 ||
             typeof this.chart.data.datasets[0].data === 'undefined'
         ) { return; }
-
         this.chart.data.datasets[0].data = newData;
+        this.chart.update();
     }
 }
