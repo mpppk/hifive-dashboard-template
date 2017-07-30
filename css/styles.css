@@ -13,13 +13,13 @@
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
 
-.user-card-nested-grid-parent {
+.left-card-nested-grid-parent {
     display: table;
     width: 100%;
     height: 100%;
 }
 
-.user-card-nested-grid {
+.left-card-nested-grid {
     display: table-cell;
     text-align: center;
     vertical-align: middle;
