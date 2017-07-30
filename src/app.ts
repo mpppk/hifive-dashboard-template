@@ -5,7 +5,7 @@ declare const h5: any;
 import {IBarChartControllerSetting} from './controller/BarChartController';
 import {ILeftCardSetting} from './controller/LeftCardController';
 import {IPercentChartControllerSetting} from './controller/PercentChartController';
-import {IRootControllerParams, rootController} from './controller/rootController';
+import {IRootControllerParams, rootController} from './controller/RootController';
 
 const mapSetting: IMapSetting = {
     iconType: MapMarkerIconType.White,

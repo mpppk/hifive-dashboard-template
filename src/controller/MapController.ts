@@ -12,8 +12,8 @@ export interface IMapSetting {
 }
 
 export enum MapMarkerIconType {
-    White = 'white',
-    Black = 'black',
+    White,
+    Black,
 }
 
 interface IMapController extends IController {
