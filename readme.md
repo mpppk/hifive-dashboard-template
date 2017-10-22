@@ -1,5 +1,7 @@
 # hifive DashBoard Template
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mpppk/hifive-dashboard-template.svg)](https://greenkeeper.io/)
+
 [![CircleCI](https://circleci.com/gh/mpppk/ts-hifive-boilerplate/tree/master.svg?style=svg)](https://circleci.com/gh/mpppk/ts-hifive-boilerplate/tree/master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e2bad77df1814b03b90a94509ad25545)](https://www.codacy.com/app/niboshiporipori/hifive-dashboard-template?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mpppk/hifive-dashboard-template&amp;utm_campaign=Badge_Grade)
 [![build status](https://gitlab.com/mpppk/hifive-dashboard-template/badges/master/build.svg)](https://gitlab.com/mpppk/hifive-dashboard-template/commits/master)
