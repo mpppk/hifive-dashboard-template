@@ -1,5 +1,6 @@
-import {polyfill} from 'es6-promise';
-polyfill();
+// import {polyfill} from 'es6-promise';
+// import Promise = require('es6-promise').Promise;
+// polyfill();
 import DummyDataService from '../service/DummyDataService';
 import {barChartController, IBarChartControllerSetting} from './BarChartController';
 import {ILeftCardSetting, leftCardController} from './LeftCardController';

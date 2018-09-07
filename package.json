@@ -6,32 +6,38 @@
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch",
-    "test": "nyc mocha",
+    "test": "jest",
     "doc": "typedoc --out ./docs -m \"amd\"",
     "start": "webpack-dev-server",
     "lint": "tslint -c tslint.json 'src/**/*.ts' 'test/**/*.ts'",
-    "codacycov": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage && rm -rf ./coverage",
     "dockerbuild": "docker build -t hifive-dashboard .",
     "dockerrun": "docker run -it -p 8080:8080 hifive-dashboard"
   },
-  "nyc": {
-    "extension": [
-      ".ts",
-      ".tsx"
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
     ],
-    "exclude": [
-      "**/*.d.ts"
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "**/__tests__/*.+(ts|tsx|js)"
     ],
-    "require": [
-      "ts-node/register"
-    ]
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   },
   "keywords": [],
   "author": "mpppk",
   "license": "MIT",
   "devDependencies": {
     "@types/chart.js": "^2.6.1",
-    "@types/es6-promise": "3.3.0",
     "@types/jest": "^23.3.1",
     "@types/leaflet": "^1.0.67",
     "codecov": "^3.1.0",
@@ -50,8 +56,9 @@
     "webpack-dev-server": "^3.0.0"
   },
   "dependencies": {
+    "@types/jquery": "^3.3.6",
     "chart.js": "^2.6.0",
-    "es6-promise": "^4.1.1",
+    "es6-promise": "^4.2.4",
     "jquery": "^3.2.1",
     "leaflet": "^1.1.0",
     "material-design-icons": "^3.0.1"

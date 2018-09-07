@@ -6,7 +6,7 @@ cache:
 
 stages:
   - install
-  - test
+  - __tests__
 
 install:
   stage: install
@@ -14,11 +14,11 @@ install:
     - npm install
 
 lint:
-  stage: test
+  stage: __tests__
   script:
     - npm run lint
 
 test:
-  stage: test
+  stage: __tests__
   script:
-    - npm test
+    - npm __tests__
