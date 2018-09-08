@@ -1,9 +1,11 @@
 # hifive DashBoard Template
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/mpppk/hifive-dashboard-template.svg)](https://greenkeeper.io/)
-
 [![CircleCI](https://circleci.com/gh/mpppk/ts-hifive-boilerplate/tree/master.svg?style=svg)](https://circleci.com/gh/mpppk/ts-hifive-boilerplate/tree/master)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e2bad77df1814b03b90a94509ad25545)](https://www.codacy.com/app/niboshiporipori/hifive-dashboard-template?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mpppk/hifive-dashboard-template&amp;utm_campaign=Badge_Grade)
+[![codebeat badge](https://codebeat.co/badges/9813c5ee-87e8-40ef-848d-d58f1d314b9d)](https://codebeat.co/projects/github-com-mpppk-hifive-dashboard-template-master)
+[![codecov](https://codecov.io/gh/mpppk/hifive-dashboard-template/branch/master/graph/badge.svg)](https://codecov.io/gh/mpppk/hifive-dashboard-template)
+
+## GitLab Status
 [![build status](https://gitlab.com/mpppk/hifive-dashboard-template/badges/master/build.svg)](https://gitlab.com/mpppk/hifive-dashboard-template/commits/master)
 [![coverage report](https://gitlab.com/mpppk/hifive-dashboard-template/badges/master/coverage.svg)](https://gitlab.com/mpppk/hifive-dashboard-template/commits/master)
 
