@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  // mode: 'production',
+  mode: "production",
   entry: "./src/app.ts",
   output: {
     filename: "dist/bundle.js"
@@ -17,11 +17,11 @@ module.exports = {
       { test: /\.tsx?$/, loader: "ts-loader" },
       { test: /\.ejs?$/, loader: "ejs-compiled-loader" }
     ]
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      filename: "index.html",
-      template: "!!ejs-compiled-loader!src/assets/index.ejs"
-    })
-  ]
+  }
+  // plugins: [
+  //   new HtmlWebpackPlugin({
+  //     filename: "index.html",
+  //     template: "!!ejs-compiled-loader!src/assets/index.ejs"
+  //   })
+  // ]
 };
