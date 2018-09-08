@@ -1,4 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WriteFilePlugin = require('write-file-webpack-plugin');
 
 module.exports = {
   mode: "production",
@@ -17,11 +19,19 @@ module.exports = {
       { test: /\.tsx?$/, loader: "ts-loader" },
       { test: /\.ejs?$/, loader: "ejs-compiled-loader" }
     ]
-  }
-  // plugins: [
-  //   new HtmlWebpackPlugin({
-  //     filename: "index.html",
-  //     template: "!!ejs-compiled-loader!src/assets/index.ejs"
-  //   })
-  // ]
+  },
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: "css/*.css" },
+      { from: "assets/**/*.png" }
+    ]),
+    new HtmlWebpackPlugin({
+      filename: "index.html",
+      template: "!!ejs-compiled-loader!src/assets/index.ejs"
+    }),
+    new WriteFilePlugin({
+      test: /css\/.+\.css$/,
+      log: true
+    })
+  ]
 };

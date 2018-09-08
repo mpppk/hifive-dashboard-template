@@ -26,8 +26,8 @@ export const rootController = {
     this._mapController.updateMarkerIcon(MapMarkerIconType.Black);
     this._leftCardController.initialize(context.args.leftCardSetting);
     this._barChartController.initialize(context.args.barChartSetting);
-    this._leftCardController.updateTopImage('dog.png');
-    this._leftCardController.updateBottomPointImage('dog.png');
+    this._leftCardController.updateTopImage('assets/dog.png');
+    this._leftCardController.updateBottomPointImage('assets/dog.png');
     this.polling();
   },
 

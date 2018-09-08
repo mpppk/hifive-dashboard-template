@@ -46,7 +46,9 @@
     "@types/jquery": "^3.3.6",
     "@types/leaflet": "^1.2.11",
     "codecov": "^3.1.0",
+    "copy-webpack-plugin": "^4.5.2",
     "ejs-compiled-loader": "^1.1.0",
+    "html-webpack-include-assets-plugin": "^1.0.4",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^0.14.3",
     "jest": "^23.5.0",
@@ -60,8 +62,10 @@
     "typedoc": "^0.10.0",
     "typescript": "^2.4.2",
     "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0",
     "webpack-command": "^0.4.1",
-    "webpack-dev-server": "^3.1.8"
+    "webpack-dev-server": "^3.1.8",
+    "write-file-webpack-plugin": "^4.4.0"
   },
   "dependencies": {
     "chart.js": "^2.7.2",
