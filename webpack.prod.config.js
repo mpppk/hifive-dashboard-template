@@ -31,6 +31,10 @@ module.exports = {
       filename: "index.html",
       template: "!!ejs-compiled-loader!src/assets/index.ejs"
     }),
+    new HtmlWebpackPlugin({
+        filename: 'about.html',
+        template: '!!ejs-compiled-loader!src/assets/about.ejs'
+    }),
     new WriteFilePlugin({
       test: /css\/.+\.css$/,
       log: true
