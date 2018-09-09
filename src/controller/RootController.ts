@@ -1,21 +1,21 @@
-import { IController, IPartialController } from "../h5/IController";
-import DummyDataService from "../service/DummyDataService";
+import { IController, IPartialController } from '../h5/IController';
+import DummyDataService from '../service/DummyDataService';
 import {
   barChartController,
   IBarChartController,
   IBarChartControllerSetting
-} from "./BarChartController";
+} from './BarChartController';
 import {
   ILeftCardController,
   ILeftCardSetting,
   leftCardController
-} from "./LeftCardController";
+} from './LeftCardController';
 import {
   IMapController,
   IMapSetting,
   mapController,
   MapMarkerIconType
-} from "./MapController";
+} from './MapController';
 
 export interface IRootControllerParams {
   barChartSetting: IBarChartControllerSetting;
@@ -33,7 +33,7 @@ interface IRootController extends IController {
 
 export const rootController: IRootController = {
   ...({} as IPartialController),
-  __name: "rootController",
+  __name: 'rootController',
   _barChartController: barChartController,
   _dummyDataService: new DummyDataService(),
   _leftCardController: leftCardController,
@@ -44,8 +44,8 @@ export const rootController: IRootController = {
     this._mapController.updateMarkerIcon(MapMarkerIconType.Black);
     this._leftCardController.initialize(context.args.leftCardSetting);
     this._barChartController.initialize(context.args.barChartSetting);
-    this._leftCardController.updateTopImage("assets/dog.png");
-    this._leftCardController.updateBottomPointImage("assets/dog.png");
+    this._leftCardController.updateTopImage('assets/dog.png');
+    this._leftCardController.updateBottomPointImage('assets/dog.png');
     this.polling();
   },
 

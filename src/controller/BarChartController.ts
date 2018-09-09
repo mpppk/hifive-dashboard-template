@@ -1,8 +1,8 @@
-import { IController, IPartialController } from "../h5/IController";
+import { IController, IPartialController } from '../h5/IController';
 import {
   BarChartService,
   IBarChartServiceSetting
-} from "../service/BarChartService";
+} from '../service/BarChartService';
 
 export interface IBarChartControllerSetting {
   barChartServiceSetting: IBarChartServiceSetting;
@@ -16,7 +16,7 @@ export interface IBarChartController extends IController {
 
 export const barChartController: IBarChartController = {
   ...({} as IPartialController),
-  __name: "barChartController",
+  __name: 'barChartController',
   barChartService: null,
   initialize(setting: IBarChartControllerSetting) {
     this.barChartService = new BarChartService(setting.barChartServiceSetting);

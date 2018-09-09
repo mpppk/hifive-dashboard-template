@@ -1,4 +1,4 @@
-import { IController } from "./IController";
+import { IController } from './IController';
 
 export interface IContext {
   controller: IController;
