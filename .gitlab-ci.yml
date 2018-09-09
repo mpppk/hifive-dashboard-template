@@ -16,9 +16,11 @@ install:
 lint:
   stage: test
   script:
+    - npm install
     - npm run lint
 
 test:
   stage: test
   script:
+    - npm install
     - npm test
