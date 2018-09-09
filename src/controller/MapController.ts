@@ -1,5 +1,5 @@
-import * as L from "leaflet";
-import { IController, IPartialController } from "../h5/IController";
+import * as L from 'leaflet';
+import { IController, IPartialController } from '../h5/IController';
 
 export interface IMapSetting {
   mapElementId: string;
@@ -27,19 +27,19 @@ export interface IMapController extends IController {
 
 export const mapController: IMapController = {
   ...({} as IPartialController),
-  __name: "mapController",
+  __name: 'mapController',
   marker: null,
   mymap: null,
 
   getIcon(iconType: MapMarkerIconType): L.Icon {
     const blackIcon: L.Icon = L.icon({
       iconSize: [50, 50], // size of the icon
-      iconUrl: "assets/mapicons/ic_person_pin_black_48dp_2x.png"
+      iconUrl: 'assets/mapicons/ic_person_pin_black_48dp_2x.png'
     });
 
     const whiteIcon: L.Icon = L.icon({
       iconSize: [50, 50], // size of the icon
-      iconUrl: "assets/mapicons/ic_person_pin_white_48dp_2x.png"
+      iconUrl: 'assets/mapicons/ic_person_pin_white_48dp_2x.png'
     });
 
     switch (iconType) {

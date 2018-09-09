@@ -1,4 +1,4 @@
-import { IContext } from "./IContext";
+import { IContext } from './IContext';
 
 export interface IController extends IPartialController {
   __name: string;

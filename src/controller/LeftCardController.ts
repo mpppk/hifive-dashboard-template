@@ -1,8 +1,8 @@
-import { IController, IPartialController } from "../h5/IController";
+import { IController, IPartialController } from '../h5/IController';
 import {
   IPercentChartControllerSetting,
   percentChartController
-} from "./PercentChartController";
+} from './PercentChartController';
 
 export interface ILeftCardSetting {
   percentChartControllerSetting: IPercentChartControllerSetting;
@@ -21,7 +21,7 @@ export interface ILeftCardController extends IController {
 
 export const leftCardController: ILeftCardController = {
   ...({} as IPartialController),
-  __name: "leftCardController",
+  __name: 'leftCardController',
   _percentChartController: percentChartController,
   setting: null,
   initialize(setting: ILeftCardSetting) {
@@ -41,12 +41,12 @@ export const leftCardController: ILeftCardController = {
     }
 
     // FIXME
-    if (typeof this.$find === "undefined") {
+    if (typeof this.$find === 'undefined') {
       return;
     }
 
-    const topImageElementSelector = "#" + this.setting.topImageElementId;
-    this.$find(topImageElementSelector).attr("src", imagePath);
+    const topImageElementSelector = '#' + this.setting.topImageElementId;
+    this.$find(topImageElementSelector).attr('src', imagePath);
   },
 
   updateBottomPointImage(imagePath: string) {
@@ -55,11 +55,11 @@ export const leftCardController: ILeftCardController = {
     }
 
     // FIXME
-    if (typeof this.$find === "undefined") {
+    if (typeof this.$find === 'undefined') {
       return;
     }
 
-    const bottomImageElementSelector = "#" + this.setting.bottomImageElementId;
-    this.$find(bottomImageElementSelector).attr("src", imagePath);
+    const bottomImageElementSelector = '#' + this.setting.bottomImageElementId;
+    this.$find(bottomImageElementSelector).attr('src', imagePath);
   }
 };

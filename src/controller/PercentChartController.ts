@@ -1,8 +1,8 @@
-import { IController, IPartialController } from "../h5/IController";
+import { IController, IPartialController } from '../h5/IController';
 import {
   IPercentChartServiceSetting,
   PercentChartService
-} from "../service/PercentChartService";
+} from '../service/PercentChartService';
 
 export interface IPercentChartControllerSetting {
   percentChartServiceSetting: IPercentChartServiceSetting;
@@ -16,7 +16,7 @@ interface IPercentChartController extends IController {
 
 export const percentChartController: IPercentChartController = {
   ...({} as IPartialController),
-  __name: "percentChartController",
+  __name: 'percentChartController',
   percentChartService: null,
   initialize(setting: IPercentChartControllerSetting) {
     this.percentChartService = new PercentChartService(
