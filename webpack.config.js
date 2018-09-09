@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 
@@ -22,6 +23,7 @@ module.exports = {
     ]
   },
   plugins: [
+      new CleanWebpackPlugin(['dist']),
       new CopyWebpackPlugin([
           { from: 'css/*.css'},
           { from: 'assets/**/*.png'},
