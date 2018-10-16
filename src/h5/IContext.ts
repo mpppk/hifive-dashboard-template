@@ -1,14 +1,12 @@
-import { IController } from './IController';
-
 export interface IContext {
-  controller: IController;
+  controller: any;
   evArg: any;
   event: Event;
   selector: JQuery;
   selectorType: number;
 }
 
-export type EventCallback = (
+export type EventHandler = (
   context?: IContext,
   $el?: JQuery<HTMLElement>
 ) => void;

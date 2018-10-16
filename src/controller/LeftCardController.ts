@@ -1,4 +1,4 @@
-import { IController, IPartialController } from '../h5/IController';
+import {Controllization} from '../h5/IController';
 import {
   IPercentChartControllerSetting,
   percentChartController
@@ -10,20 +10,14 @@ export interface ILeftCardSetting {
   bottomImageElementId: string;
 }
 
-export interface ILeftCardController extends IController {
-  _percentChartController: any;
-  setting: ILeftCardSetting | null;
-  initialize(setting: ILeftCardSetting): void;
-  updatePercentChart(percent: number): void;
+type ILeftCardControllerProps = {
   updateTopImage(imagePath: string): void;
   updateBottomPointImage(imagePath: string): void;
-}
+} & typeof props;
 
-export const leftCardController: ILeftCardController = {
-  ...({} as IPartialController),
-  __name: 'leftCardController',
+const props = {
   _percentChartController: percentChartController,
-  setting: null,
+  setting: null as ILeftCardSetting | null,
   initialize(setting: ILeftCardSetting) {
     this.setting = setting;
     this._percentChartController.initialize(
@@ -34,14 +28,13 @@ export const leftCardController: ILeftCardController = {
   updatePercentChart(percent: number) {
     this._percentChartController.update(percent);
   },
+};
 
+export const leftCardController: Controllization<ILeftCardControllerProps> = {
+  ...props,
+  __name: 'leftCardController',
   updateTopImage(imagePath: string) {
     if (this.setting === null) {
-      return;
-    }
-
-    // FIXME
-    if (typeof this.$find === 'undefined') {
       return;
     }
 
@@ -51,11 +44,6 @@ export const leftCardController: ILeftCardController = {
 
   updateBottomPointImage(imagePath: string) {
     if (this.setting === null) {
-      return;
-    }
-
-    // FIXME
-    if (typeof this.$find === 'undefined') {
       return;
     }
 
