@@ -67,7 +67,7 @@
     "webpack-cli": "3.3.6",
     "webpack-command": "0.4.2",
     "webpack-dev-server": "3.7.2",
-    "write-file-webpack-plugin": "4.5.0"
+    "write-file-webpack-plugin": "4.5.1"
   },
   "dependencies": {
     "chart.js": "^2.7.2",
