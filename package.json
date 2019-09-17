@@ -64,7 +64,7 @@
     "typedoc": "0.14.2",
     "typescript": "3.6.3",
     "webpack": "4.17.2",
-    "webpack-cli": "3.3.8",
+    "webpack-cli": "3.3.9",
     "webpack-command": "0.5.0",
     "webpack-dev-server": "3.8.1",
     "write-file-webpack-plugin": "4.5.1"
