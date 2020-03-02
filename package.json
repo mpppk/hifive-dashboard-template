@@ -42,7 +42,7 @@
   "author": "mpppk",
   "license": "MIT",
   "devDependencies": {
-    "@types/chart.js": "2.9.14",
+    "@types/chart.js": "2.9.15",
     "@types/jest": "23.3.14",
     "@types/jquery": "3.3.33",
     "@types/leaflet": "1.5.9",
