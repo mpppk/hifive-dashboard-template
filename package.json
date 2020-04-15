@@ -44,7 +44,7 @@
   "devDependencies": {
     "@types/chart.js": "2.9.19",
     "@types/jest": "23.3.14",
-    "@types/jquery": "3.3.34",
+    "@types/jquery": "3.3.35",
     "@types/leaflet": "1.5.12",
     "clean-webpack-plugin": "1.0.1",
     "codecov": "3.6.5",
