@@ -45,7 +45,7 @@
     "@types/chart.js": "2.9.22",
     "@types/jest": "23.3.14",
     "@types/jquery": "3.5.0",
-    "@types/leaflet": "1.5.12",
+    "@types/leaflet": "1.5.13",
     "clean-webpack-plugin": "1.0.1",
     "codecov": "3.7.0",
     "copy-webpack-plugin": "4.6.0",
