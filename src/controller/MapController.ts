@@ -1,5 +1,5 @@
 import * as L from 'leaflet';
-import { IController, IPartialController } from '../h5/IController';
+import {Controllization} from '../h5/IController';
 
 export interface IMapSetting {
   mapElementId: string;
@@ -16,20 +16,9 @@ export enum MapMarkerIconType {
   Black
 }
 
-export interface IMapController extends IController {
-  mymap: L.Map | null;
-  marker: L.Marker | null;
-  getIcon(iconType: MapMarkerIconType): L.Icon;
-  initializeMap(mapSetting: IMapSetting): void;
-  updatePosition(position: L.LatLngExpression): void;
-  updateMarkerIcon(iconType: MapMarkerIconType): void;
-}
-
-export const mapController: IMapController = {
-  ...({} as IPartialController),
-  __name: 'mapController',
-  marker: null,
-  mymap: null,
+const props = {
+  marker: null as L.Marker | null,
+  mymap: null as L.Map | null,
 
   getIcon(iconType: MapMarkerIconType): L.Icon {
     const blackIcon: L.Icon = L.icon({
@@ -79,4 +68,9 @@ export const mapController: IMapController = {
 
     this.marker.setIcon(this.getIcon(iconType));
   }
+};
+
+export const mapController: Controllization<typeof props> = {
+  ...props,
+  __name: 'mapController',
 };

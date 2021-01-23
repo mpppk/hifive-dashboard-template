@@ -1,4 +1,4 @@
-import { IController, IPartialController } from '../h5/IController';
+import {Controllization} from '../h5/IController';
 import {
   IPercentChartServiceSetting,
   PercentChartService
@@ -8,16 +8,9 @@ export interface IPercentChartControllerSetting {
   percentChartServiceSetting: IPercentChartServiceSetting;
 }
 
-interface IPercentChartController extends IController {
-  percentChartService: PercentChartService | null;
-  initialize(setting: IPercentChartControllerSetting): void;
-  update(prob: number): void;
-}
+const props = {
+  percentChartService: null as PercentChartService | null,
 
-export const percentChartController: IPercentChartController = {
-  ...({} as IPartialController),
-  __name: 'percentChartController',
-  percentChartService: null,
   initialize(setting: IPercentChartControllerSetting) {
     this.percentChartService = new PercentChartService(
       setting.percentChartServiceSetting
@@ -25,6 +18,14 @@ export const percentChartController: IPercentChartController = {
   },
 
   update(percent: number) {
-    this.percentChartService!.update(percent);
+    if (!this.percentChartService) {
+      throw new Error('PercentChartController does not initialized');
+    }
+    this.percentChartService.update(percent);
   }
+};
+
+export const percentChartController: Controllization<typeof props> = {
+  ...props,
+  __name: 'percentChartController',
 };

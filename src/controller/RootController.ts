@@ -1,17 +1,14 @@
-import { IController, IPartialController } from '../h5/IController';
+import {Controllization} from '../h5/IController';
 import DummyDataService from '../service/DummyDataService';
 import {
   barChartController,
-  IBarChartController,
   IBarChartControllerSetting
 } from './BarChartController';
 import {
-  ILeftCardController,
   ILeftCardSetting,
   leftCardController
 } from './LeftCardController';
 import {
-  IMapController,
   IMapSetting,
   mapController,
   MapMarkerIconType
@@ -23,31 +20,11 @@ export interface IRootControllerParams {
   mapSetting: IMapSetting;
 }
 
-interface IRootController extends IController {
-  polling: () => void;
-  _barChartController: IBarChartController;
-  _dummyDataService: DummyDataService;
-  _leftCardController: ILeftCardController;
-  _mapController: IMapController;
-}
-
-export const rootController: IRootController = {
-  ...({} as IPartialController),
-  __name: 'rootController',
+const props = {
   _barChartController: barChartController,
   _dummyDataService: new DummyDataService(),
   _leftCardController: leftCardController,
   _mapController: mapController,
-
-  __ready(context: any) {
-    this._mapController.initializeMap(context.args.mapSetting);
-    this._mapController.updateMarkerIcon(MapMarkerIconType.Black);
-    this._leftCardController.initialize(context.args.leftCardSetting);
-    this._barChartController.initialize(context.args.barChartSetting);
-    this._leftCardController.updateTopImage('assets/dog.png');
-    this._leftCardController.updateBottomPointImage('assets/dog.png');
-    this.polling();
-  },
 
   polling() {
     const sleep = (n: number) => new Promise(resolve => setTimeout(resolve, n));
@@ -62,4 +39,19 @@ export const rootController: IRootController = {
     };
     wait();
   }
+};
+
+export const rootController: Controllization<typeof props> = {
+  ...props,
+  __name: 'rootController',
+
+  __ready(context: any) {
+    this._mapController.initializeMap(context.args.mapSetting);
+    this._mapController.updateMarkerIcon(MapMarkerIconType.Black);
+    this._leftCardController.initialize(context.args.leftCardSetting);
+    this._barChartController.initialize(context.args.barChartSetting);
+    this._leftCardController.updateTopImage('assets/dog.png');
+    this._leftCardController.updateBottomPointImage('assets/dog.png');
+    this.polling();
+  },
 };

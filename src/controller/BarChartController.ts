@@ -1,4 +1,4 @@
-import { IController, IPartialController } from '../h5/IController';
+import { Controllization } from '../h5/IController';
 import {
   BarChartService,
   IBarChartServiceSetting
@@ -8,16 +8,8 @@ export interface IBarChartControllerSetting {
   barChartServiceSetting: IBarChartServiceSetting;
 }
 
-export interface IBarChartController extends IController {
-  barChartService: BarChartService | null;
-  initialize(setting: IBarChartControllerSetting): void;
-  update(data: number[]): void;
-}
-
-export const barChartController: IBarChartController = {
-  ...({} as IPartialController),
-  __name: 'barChartController',
-  barChartService: null,
+const props = {
+  barChartService: null as BarChartService | null,
   initialize(setting: IBarChartControllerSetting) {
     this.barChartService = new BarChartService(setting.barChartServiceSetting);
   },
@@ -28,4 +20,9 @@ export const barChartController: IBarChartController = {
     }
     this.barChartService.update(data);
   }
+};
+
+export const barChartController: Controllization<typeof props> = {
+  ...props,
+  __name: 'barChartController',
 };
